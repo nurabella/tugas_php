@@ -17,29 +17,31 @@ if ($tahun % 4 == 0){
     echo "$tahun bukan tahun kabisat <br>";
 }
 
-//No 3 Membuat grade nilai
+//No 3 membuat grade nilai
 
 $nilai = 90;
 
-if(($nilai >= 90) && ($nilai <= 100 ))
+if($nilai >= 90 && $nilai <= 100 )
 {
-	echo "Nilai = grade A";
+	echo "Nilai $nilai = grade A";
 }
-elseif(($nilai >= 80) && ($nilai < 90))
+elseif($nilai >= 80 && $nilai < 90)
 {
-	echo "Nilai = grade B";
+	echo "Nilai $nilai = grade B";
 }
-elseif(($nilai >= 70) && ($nilai < 80))
+elseif($nilai >= 70 && $nilai < 80)
 {
-	echo "Nilai = grade C";
+	echo "Nilai $nilai = grade C";
 }
-elseif(($nilai >= 60) && ($nilai < 70))
+elseif($nilai >= 60 && $nilai < 70)
 {
-	echo "Nilai = grade D";
+	echo "Nilai $nilai = grade D";
 }
-elseif(($nilai >= 0 ) && ($nilai < 60))
+elseif($nilai >= 0  && $nilai < 60)
 {
-	echo "Nilai = grade E";
+	echo "Nilai $nilai = grade E";
+} else {
+	echo "masukan nilai yang benar";
 }
 
 ?>
