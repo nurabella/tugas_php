@@ -18,7 +18,7 @@ h1 {
 }
 table{
     border-collapse:collapse;
-    font:normal normal 12px Verdana,Arial,Sans-Serif;
+    font:normal normal 12px ,Sans-Serif;
     color:#333333;
 }
 
@@ -29,11 +29,10 @@ table th {
     font-size:14px;
 }
 
-table th,
-table td {
+table th,table td {
     vertical-align:top;
     padding:5px 10px;
-    border:1px solid #696969;
+    border:1px solid ;
 }
 
 table tr {
@@ -44,13 +43,11 @@ table tr:nth-child(even) {
     background:#F0F8FF;
 }
 
-
-
 </style>
 <body>
-    <h1>Data Anggota Perpustakaan</h1>
+    <h1 align="center">Data Anggota Perpustakaan</h1>
 
-    <table border="1">
+    <table border="1" cellspacing="0" align="center">
         <tr>
             <td><b>Id</b></td>
             <td><b>Nama</b></td>
