@@ -18,31 +18,31 @@ for ($i = 0; $i <= 8; $i++){
 </head>
 <body>
 <form>
-		<table border="1" >
-			<tr>
-				<th>No</th>
-				<th>Nama</th>
-				<th>Kelas</th>
-			</tr>
- 
-		<?php    
-        
-        for ($no = 1, $i=1, $a=10; $i<=10, $a>=1  ; $i++, $a--) { 
+	<table border="1" >
+		<tr>
+			<th>No</th>
+			<th>Nama</th>
+			<th>Kelas</th>
+		</tr>
+
+	<?php    
+    
+	    for ($no = 1, $i=1, $a=10; $i<=10, $a>=1  ; $i++, $a--) { 
 			if($no % 2 == 0){
-           		$warna='#fff';
+	       		$warna='#fff';
 			}
 			else{
 				$warna='#ccc';
 			}
-        ?>
-			<tr bgcolor= "<?php echo $warna ?>">
-				<td> <?php echo $no; ?></td>
-				<td><?php echo "Nama ke $i"; ?></td>
-				<td><?php echo $a; ?></td>
-			</tr>
-		<?php $no++; } 
-        ?>
-		</table>
+    ?>
+		<tr bgcolor= "<?php echo $warna ?>">
+			<td> <?php echo $no; ?></td>
+			<td><?php echo "Nama ke $i"; ?></td>
+			<td><?php echo $a; ?></td>
+		</tr>
+	<?php $no++; } 
+    ?>
+	</table>
 	
 </body>
 </html>
