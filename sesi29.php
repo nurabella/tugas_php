@@ -13,35 +13,35 @@
     <title> sesi 29</title>
 </head>
 <style>
-h1 {
-	color: blueviolet;
-}
-table{
-    border-collapse:collapse;
-    font:normal normal 12px ,Sans-Serif;
-    color:#333333;
-}
+    h1 {
+    	color: blueviolet;
+    }
+    table{
+        border-collapse:collapse;
+        font:normal normal 12px ,Sans-Serif;
+        color:#333333;
+    }
 
-table th {
-    background:#00BFFF;
-    color:#DCDCDC;
-    font-weight:bold;
-    font-size:14px;
-}
+    table th {
+        background:#00BFFF;
+        color:#DCDCDC;
+        font-weight:bold;
+        font-size:14px;
+    }
 
-table th,table td {
-    vertical-align:top;
-    padding:5px 10px;
-    border:1px solid ;
-}
+    table th,table td {
+        vertical-align:top;
+        padding:5px 10px;
+        border:1px solid ;
+    }
 
-table tr {
-    background:#F5FFFA;
-}
+    table tr {
+        background:#F5FFFA;
+    }
 
-table tr:nth-child(even) {
-    background:#F0F8FF;
-}
+    table tr:nth-child(even) {
+        background:#F0F8FF;
+    }
 
 </style>
 <body>
