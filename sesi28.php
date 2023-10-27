@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>sesi 28</title>
+<title>sesi 28</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
 
 </head>
@@ -46,13 +46,10 @@
             <td><?php echo $no;?></td>
             <td>
                 <?php 
-                    echo $student->nama;
-                ?>
+                    echo $student->nama;?>
             </td>
             <td>
-                <?php 
-                    echo $student->tanggal_lahir;
-                ?>
+                <?php echo $student->tanggal_lahir;?>
             </td>
             <td>
                 <?php 
@@ -63,19 +60,13 @@
                 ?>
             </td>
             <td>
-                <?php 
-                    echo $student->alamat;
-                ?>
+                <?php echo $student->alamat;?>
             </td>
             <td>
-                <?php 
-                    echo $student->kelas;
-                ?>
+                <?php echo $student->kelas;?>
             </td>
             <td>
-                <?php 
-                    echo $student->nilai;
-                ?>
+                <?php echo $student->nilai;?>
             </td>
             <td>
                 <?php 
