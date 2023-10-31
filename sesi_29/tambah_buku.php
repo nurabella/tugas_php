@@ -36,7 +36,7 @@
    <section id="about" style="background-color: #fff">
         <div class="container" style="height: auto;">
          <h4>Tambah Buku</h4>
-         <form action="proses.php" method="post">
+         <form action="proses_add_buku.php" method="post">
             <table width="25%" border="0">
                 
                   <tr>

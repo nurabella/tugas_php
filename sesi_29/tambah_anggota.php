@@ -36,37 +36,37 @@
    <section id="about" style="background-color: #fff">
         <div class="container" style="height: auto;">
          <h4>Tambah Anggota</h4>
-         <form action="proses_add.php" method="POST" name="form-input-data">
-            <table width="25%" border="0">
+         <form action="proses_add_anggota.php" method="POST" name="form-input-data">
+            <table class="table">
                   <tr>
                     <td>Nama</td>
-                    <td><input type="text" name="nama"></td>
+                    <td><input type="text" name="nama" class="form-control" required="" autocomplete="off"></td>
                 </tr>
                   <tr>
                     <td>Username</td>
-                    <td><input type="text" name="username"></td>
+                    <td><input type="text" name="username" class="form-control" required="" autocomplete="off"></td>
                 </tr>
                   <tr>
                     <td>Password</td>
-                    <td><input type="password" name="password"></td>
+                    <td><input type="password" name="password" class="form-control" required="" autocomplete="off"></td>
                 </tr>
                 <tr>
                   <td>Jenis Kelamin</td>
-                  <td><input type="radio" name="jenis_kelamin" > Laki Laki
-                      <input type="radio" name="jenis_kelamin" > Perempuan
+                  <td><input type="radio" name="jenis_kelamin" value="Laki-Laki"> Laki Laki
+                      <input type="radio" name="jenis_kelamin" value="Perempuan"> Perempuan
                   </td>
                 </tr>
                 <tr>
                     <td>Telpon</td>
-                    <td><input type="text" name="telpon"></td>
+                    <td><input type="text" name="telp" class="form-control" required="" autocomplete="off"></td>
                 </tr>
                   <tr>
                     <td>Alamat</td>
-                    <td><input type="text" name="alamat"></td>
+                    <td><input type="text" name="alamat" class="form-control" required="" autocomplete="off"></td>
                 </tr>
                   <tr>
                     <td>Email</td>
-                    <td><input type="text" name="email"></td>
+                    <td><input type="text" name="email" class="form-control" required="" autocomplete="off"></td>
                 </tr>
                   
                   <tr>
