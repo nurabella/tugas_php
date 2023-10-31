@@ -42,6 +42,7 @@
    <section id="about" style="background-color: #fff">
         <div class="container" style="height: auto;">
          <h4>Data Anggota Perpustakaan</h4>
+          <a href="tambah_anggota.php"> Tambah Anggota</a><br /><br />
             <table class="table table-bordered">
                 <tr>
                     <td><b>Id</b></td>
@@ -52,6 +53,7 @@
                     <td><b>Telpon</b></td>
                     <td><b>Alamat</b></td>
                     <td><b>Email</b></td>
+                    <td><b>Aksi</b></td>
                 </tr>
                 <?php while ($data = mysqli_fetch_array($query)) { ?>
                  <tr>
@@ -63,13 +65,14 @@
                     <td> <?php echo $data ['telp']; ?> </td>
                     <td> <?php echo $data ['alamat']; ?> </td>
                     <td> <?php echo $data ['email']; ?> </td>
+                    <td><a href="hapus.php<?php echo $data['id_anggota']; ?>">Hapus</a> | <a href="edit.php<?php echo $data['id_anggota']; ?>">Edit</a></td>
                  </tr>
                  <?php } ?>
             </table>
         </div>
       </section>
     <!--akhir about-->
-     <!--footer-->
+    <!--footer-->
 
     <footer class="text-center pb-2 pt-4" style="background-color: #fcd2f1; ">
       <p>Created by <a href="https//instagram.com" class="fw-bold" >Nura Bela</a></p>

@@ -42,6 +42,7 @@
    <section id="about" style="background-color: #fff">
         <div class="container" style="height: auto;">
          <h4>Daftar Buku</h4>
+          <a href="tambah_buku.php"> Tambah Buku </a><br /><br />
             <table class="table table-bordered">
                 <tr>
                     <td><b>No</b></td>
@@ -53,6 +54,8 @@
                     <td><b>Katalog</b></td>
                     <td><b>Stok</b></td>
                     <td><b>Harga Pinjam</b></td>
+                     <td><b>Aksi</b></td>
+
                 </tr>
                 <?php 
                 $no = 1;

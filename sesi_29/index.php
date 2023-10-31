@@ -59,7 +59,7 @@
       </section>
     <!--akhir about-->
 
-     <!--footer-->
+    <!--footer-->
 
     <footer class="text-center pb-2 pt-4" style="background-color: #fcd2f1; ">
       <p>Created by <a href="https//instagram.com" class="fw-bold" >Nura Bela</a></p>
