@@ -15,7 +15,7 @@
 
 <body>
      <!--navbar-->
-      <nav class="navbar navbar-expand-lg navbar-light" style="background-color: #fcd2f1;">
+      <nav class="navbar navbar-expand-lg navbar-light" style="background-color: #9cdbd6;">
         <div class="container">
           <a class="navbar-brand" href="index.php">My Library</a>
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -42,7 +42,7 @@
    <section id="about" style="background-color: #fff">
         <div class="container" style="height: auto;">
          <h4>Daftar Buku</h4>
-          <a href="tambah_buku.php"> Tambah Buku </a><br /><br />
+           <a class='btn btn-primary mb-3' href='tambah_buku.php'>Tambah Buku</a>
             <table class="table table-bordered">
                 <tr>
                     <td><b>No</b></td>
@@ -70,6 +70,10 @@
                     <td> <?php echo $data ['nama']; ?> </td>
                     <td> <?php echo $data ['qty_stok']; ?> </td>
                     <td> <?php echo $data ['harga_pinjam']; ?> </td>
+                    <td>
+                      <a class='btn btn-success' href='edit_anggota.php?id_anggota=$data[id_anggota]'>Edit</a>
+                      <a class='btn btn-danger' href='hapus_anggota.php?id_anggota=$data[id_anggota]'>Hapus</a>
+                    </td>
                  </tr>
                 <?php $no++; } ?>
             </table>
@@ -78,7 +82,7 @@
     <!--akhir about-->
      <!--footer-->
 
-    <footer class="text-center pb-2 pt-4" style="background-color: #fcd2f1; ">
+    <footer class="text-center pb-2 pt-4" style="background-color: #9cdbd6; ">
       <p>Created by <a href="https//instagram.com" class="fw-bold" >Nura Bela</a></p>
     </footer>
 

@@ -2,7 +2,7 @@
 
     include "connection.php";
 
-    $query = mysqli_query($connection, "SELECT * FROM anggota JOIN peminjaman ON peminjaman.id_pinjam=anggota.id_anggota JOIN detail_peminjaman ON detail_peminjaman.id_pinjam=peminjaman.id_pinjam JOIN buku ON buku.isbn=detail_peminjaman.isbn;")
+    $query = mysqli_query($connection, "SELECT * FROM peminjaman JOIN anggota ON peminjaman.id_pinjam=anggota.id_anggota");
 ?>
 
 <!doctype html>
@@ -15,7 +15,7 @@
 
 <body>
      <!--navbar-->
-      <nav class="navbar navbar-expand-lg navbar-light" style="background-color: #fcd2f1;">
+      <nav class="navbar navbar-expand-lg navbar-light" style="background-color: #9cdbd6;">
         <div class="container">
           <a class="navbar-brand" href="index.php">My Library</a>
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -42,17 +42,18 @@
    <section id="about" style="background-color: #fff">
         <div class="container" style="height: auto;">
          <h4>Daftar Transaksi</h4>
+          <a class='btn btn-primary mb-3' href='tambah_transaksi.php'>Tambah Transaksi</a>
             <table class="table table-bordered">
                 <tr>
                     <td><b>No</b></td>
                     <td><b>Nama Anggota</b></td>
-                    <td><b>Jenis Kelamin</b></td>
-                    <td><b>Email</b></td>
+                    <!-- <td><b>Jenis Kelamin</b></td>
+                    <td><b>Email</b></td> -->
                     <td><b>Tanggal Pinjam</b></td>
                     <td><b>Tanggam Kembali</b></td>
-                    <td><b>ISBN</b></td>
-                    <td><b>Judul Buku</b></td>
-                    <td><b>Harga Pinjam</b></td>
+                    <!-- <td><b>Judul Buku</b></td>
+                    <td><b>Harga Pinjam</b></td> -->
+                     <td><b>Aksi</b></td>
                 </tr>
                 <?php 
                 $no = 1;
@@ -60,13 +61,16 @@
                  <tr>
                     <td> <?php echo $no; ?> </td>
                     <td> <?php echo $data ['nama']; ?> </td>
-                    <td> <?php echo $data ['sex']; ?> </td>
-                    <td> <?php echo $data ['email']; ?> </td>
+                    <!-- <td> <?php echo $data ['sex']; ?> </td>
+                    <td> <?php echo $data ['email']; ?> </td> -->
                     <td> <?php echo $data ['tgl_pinjam']; ?> </td>
                     <td> <?php echo $data ['tgl_kembali']; ?> </td>
-                    <td> <?php echo $data ['isbn']; ?> </td>
-                    <td> <?php echo $data ['judul']; ?> </td>
-                    <td> <?php echo $data ['harga_pinjam']; ?> </td>
+                    <!-- <td> <?php echo $data ['judul']; ?> </td>
+                    <td> <?php echo $data ['harga_pinjam']; ?> </td> -->
+                    <td>
+                      <a class='btn btn-success' href='edit_anggota.php?id_anggota=$data[id_anggota]'>Edit</a>
+                      <a class='btn btn-danger' href='hapus_anggota.php?id_anggota=$data[id_anggota]'>Hapus</a>
+                    </td>
                  </tr>
                  <?php $no++; } ?>
             </table>
@@ -75,7 +79,7 @@
     <!--akhir about-->
      <!--footer-->
 
-    <footer class="text-center pb-2 pt-4" style="background-color: #fcd2f1; ">
+    <footer class="text-center pb-2 pt-4" style="background-color: #9cdbd6; ">
       <p>Created by <a href="https//instagram.com" class="fw-bold" >Nura Bela</a></p>
     </footer>
 

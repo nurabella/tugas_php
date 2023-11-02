@@ -15,7 +15,7 @@
 
 <body>
      <!--navbar-->
-      <nav class="navbar navbar-expand-lg navbar-light" style="background-color: #fcd2f1;">
+      <nav class="navbar navbar-expand-lg navbar-light" style="background-color: #9cdbd6;">
         <div class="container">
           <a class="navbar-brand" href="#">My Library</a>
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -40,9 +40,7 @@
     <!--akhir navbar-->
 
    <!--about-->
-
-      <section id="about" style="background-color: #fff">
-        <div class="container" style="height: 700px;">
+        <div class="container" style="height: 700px;" >
           <div class="row align-items-start text-start">
             <div class="col-md-6" style="padding-top: 120px;">
              <h1 class="fw-bold mt-5 fs-1 ">Welcome to My Library</h1>
@@ -56,12 +54,11 @@
           </div>
 
         </div>
-      </section>
     <!--akhir about-->
 
     <!--footer-->
 
-    <footer class="text-center pb-2 pt-4" style="background-color: #fcd2f1; ">
+    <footer class="text-center pb-2 pt-4" style="background-color: #9cdbd6; ">
       <p>Created by <a href="https//instagram.com" class="fw-bold" >Nura Bela</a></p>
     </footer>
 

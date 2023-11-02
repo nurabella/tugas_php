@@ -9,7 +9,7 @@
 
 <body>
      <!--navbar-->
-      <nav class="navbar navbar-expand-lg navbar-light" style="background-color: #fcd2f1;">
+      <nav class="navbar navbar-expand-lg navbar-light" style="background-color: #9cdbd6;">
         <div class="container">
           <a class="navbar-brand" href="index.php">My Library</a>
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -36,40 +36,71 @@
    <section id="about" style="background-color: #fff">
         <div class="container" style="height: auto;">
          <h4>Tambah Buku</h4>
-         <form action="proses_add_buku.php" method="post">
-            <table width="25%" border="0">
-                
+         <div class="col-6">
+         <form action="proses_add_buku.php" method="post" name="form-input-data">
+             <table class="table">
+
                   <tr>
                     <td>ISBN</td>
-                    <td><input type="text" name="No"></td>
-                </tr>
+                    <td><input type="text" name="isbn"  class="form-control" required="" autocomplete="off"></td>
+                </tr> 
                   <tr>
                     <td>Judul Buku</td>
-                    <td><input type="text" name="No"></td>
+                    <td><input type="text" name="judul"  class="form-control" required="" autocomplete="off"></td>
                 </tr>
                   <tr>
                     <td>Tahun Terbit</td>
-                    <td><input type="date" name="No"></td>
+                    <td><input type="date" name="tahun"  class="form-control" required="" autocomplete="off"></td>
                 </tr>
-                  <tr>
-                    <td>Nama Penerbit</td>
-                    <td><input type="text" name="No"></td>
+                <tr>
+                    <td>Penerbit</td>
+                    <td>
+                      <select name="id_penerbit">
+                        <?php
+                        include "connection.php";
+                        $query = mysqli_query($connection, "SELECT * FROM penerbit");
+                        while ($data = mysqli_fetch_array($query)) {
+                            echo "<option value=$data[id_penerbit]> $data[nama_penerbit] </option>";
+                        }
+                        ?>
+                      </select>
+                    </td>
                 </tr>
                   <tr>
                     <td>Nama Pengarang</td>
-                    <td><input type="text" name="No"></td>
+                    <td>
+                      <select name="id_pengarang">
+                        <?php
+                        include "connection.php";
+                        $query = mysqli_query($connection, "SELECT * FROM pengarang");
+                        while ($data = mysqli_fetch_array($query)) {
+                            echo "<option value=$data[id_pengarang]> $data[nama_pengarang] </option>";
+                        }
+                        ?>
+                      </select>
+                    </td>
                 </tr>
                   <tr>
                     <td>Katalog</td>
-                    <td><input type="text" name="No"></td>
+                    <td>
+                      <select name="id_katalog">
+                        <?php
+                        include "connection.php";
+                        $query = mysqli_query($connection, "SELECT * FROM katalog");
+                        while ($data = mysqli_fetch_array($query)) {
+                            echo "<option value=$data[id_katalog]> $data[nama] </option>";
+                        }
+                        ?>
+                      </select>
+                    </td>
                 </tr>
                   <tr>
                     <td>Stok</td>
-                    <td><input type="text" name="No"></td>
+                    <td><input type="text" name="qty_stok"  class="form-control" required="" autocomplete="off"></td>
                 </tr>
                   <tr>
                     <td>Harga Pinjam</td>
-                    <td><input type="text" name="No"></td>
+                    <td><input type="text" name="harga_pinjam"  class="form-control" required="" autocomplete="off"></td>
                 </tr>
 
                   <tr>
@@ -79,6 +110,7 @@
                    
             </table>
           </form>
+        </div>
         </div>
       </section>
     <!--akhir about-->

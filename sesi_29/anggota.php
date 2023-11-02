@@ -15,7 +15,7 @@
 
 <body>
      <!--navbar-->
-      <nav class="navbar navbar-expand-lg navbar-light" style="background-color: #fcd2f1;">
+      <nav class="navbar navbar-expand-lg navbar-light" style="background-color: #9cdbd6;">
         <div class="container">
           <a class="navbar-brand" href="index.php">My Library</a>
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -36,20 +36,18 @@
           </div>
         </div>
       </nav>
-
     <!--akhir navbar-->
 
-   <section id="about" style="background-color: #fff">
         <div class="container" style="height: auto;">
          <h4>Data Anggota Perpustakaan</h4>
-          <a href="tambah_anggota.php"> Tambah Anggota</a><br /><br />
-            <table class="table table-bordered">
+          <a class='btn btn-primary mb-3' href='tambah_anggota.php'>Tambah Anggota</a>
+            <table class="table table-bordered ">
                 <tr>
-                    <td><b>Id</b></td>
+                    <td><b>ID</b></td>
                     <td><b>Nama</b></td>
                     <td><b>Username</b></td>
                     <td><b>Password</b></td>
-                    <td><b>Sex</b></td>
+                    <td><b>Jenis Kelamin</b></td>
                     <td><b>Telpon</b></td>
                     <td><b>Alamat</b></td>
                     <td><b>Email</b></td>
@@ -65,16 +63,20 @@
                     <td> <?php echo $data ['telp']; ?> </td>
                     <td> <?php echo $data ['alamat']; ?> </td>
                     <td> <?php echo $data ['email']; ?> </td>
-                    <td><a href="hapus.php<?php echo $data['id_anggota']; ?>">Hapus</a> | <a href="edit.php<?php echo $data['id_anggota']; ?>">Edit</a></td>
+                    <td>
+                      <a class='btn btn-success' href="proses_edit_anggota.php? echo $data ['id_anggota']; ?>">Edit</a>
+                      <a class='btn btn-danger' href="proses_delete_anggota.php? echo $data ['id_anggota']; ?>">Hapus</a>
+                    </td>
                  </tr>
                  <?php } ?>
             </table>
         </div>
-      </section>
+     
     <!--akhir about-->
+
     <!--footer-->
 
-    <footer class="text-center pb-2 pt-4" style="background-color: #fcd2f1; ">
+    <footer class="text-center pb-2 pt-4" style="background-color: #9cdbd6; ">
       <p>Created by <a href="https//instagram.com" class="fw-bold" >Nura Bela</a></p>
     </footer>
 
