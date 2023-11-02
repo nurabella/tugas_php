@@ -43,7 +43,7 @@
           <a class='btn btn-primary mb-3' href='tambah_anggota.php'>Tambah Anggota</a>
             <table class="table table-bordered ">
                 <tr>
-                    <td><b>ID</b></td>
+                    
                     <td><b>Nama</b></td>
                     <td><b>Username</b></td>
                     <td><b>Password</b></td>
@@ -55,7 +55,7 @@
                 </tr>
                 <?php while ($data = mysqli_fetch_array($query)) { ?>
                  <tr>
-                    <td> <?php echo $data ['id_anggota']; ?> </td>
+                    
                     <td> <?php echo $data ['nama']; ?> </td>
                     <td> <?php echo $data ['username']; ?> </td>
                     <td> <?php echo $data ['password']; ?> </td>
@@ -64,8 +64,8 @@
                     <td> <?php echo $data ['alamat']; ?> </td>
                     <td> <?php echo $data ['email']; ?> </td>
                     <td>
-                      <a class='btn btn-success' href="proses_edit_anggota.php? echo $data ['id_anggota']; ?>">Edit</a>
-                      <a class='btn btn-danger' href="proses_delete_anggota.php? echo $data ['id_anggota']; ?>">Hapus</a>
+                      <a class='btn btn-success' href="edit_anggota.php?id_anggota=<?php echo $data ['id_anggota']; ?>">Edit</a>
+                      <a class='btn btn-danger' onclick="return confirm ('hapus data ini?');" href="delete_anggota.php?id_anggota=<?php echo $data ['id_anggota']; ?>">Hapus</a>
                     </td>
                  </tr>
                  <?php } ?>

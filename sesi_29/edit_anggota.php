@@ -8,10 +8,11 @@
 
      <?php
       include 'connection.php';
-      $id_anggota= $GET['id_anggota'];
-      $data = mysqli_query($connection, "SELECT * FROM anggota WHERE id_anggota='$id_anggota' ");
+      $id_anggota= $_GET['id_anggota'];
 
-      while ($d = mysqli_fetch_array($data)){
+      $datas = mysqli_query($connection, "SELECT * FROM anggota WHERE id_anggota='$id_anggota' ");
+
+      foreach ($datas as $data){
         $nama = $data ['nama'];
         $username = $data ['username'];
         $password = $data ['password'];
@@ -28,12 +29,11 @@
 	 <section id="about" style="background-color: #fff">
         <div class="container" style="height: auto;">
          <h4>Edit Anggota</h4>
-         <form action="proses_edit_anggota.php?id=<?php echo $nama; ?>" method="POST" name="form-input-data">
+         <form action="proses_edit_anggota.php?id_anggota=<?php echo $id_anggota; ?>" method="POST" name="form-input-data">
               <table class="table">
                   <tr>
                     <td>Nama</td>
                     <td>
-                      <input type="hidden" name="id_anggota" value="<?php echo $d['id_anggota']; ?>">
                       <input type="text" name="nama" value="<?php echo $nama;?>">
                     </td>
                 </tr>
