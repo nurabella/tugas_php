@@ -10,14 +10,14 @@ for($a=4; $a>=0; $a--){
 //No 2
 $a = array("apel", "nanas", "mangga","jeruk");
 
-echo  "<br>" .count($a);
+echo  "<br> jumlah data = " .count($a) ;
 
 //No 3
 
     $aray=array(7,3,4,9);
     $jumlah=array_sum($aray);
 
-    echo "7+3+4+9 = $jumlah <br>";
+    echo "Jumlah = $jumlah <br>";
 
 //No 4
 for($a=1;$a<=1;$a++)
@@ -25,7 +25,7 @@ for($a=1;$a<=1;$a++)
         for($b=1;$b<=10;$b++)
         {
         $total=$a*$b;
-        echo "<p> $a x $b=$total<br><br>";
+        echo "<p> $a x $b=$total<br>";
         }
     }
 
