@@ -1,6 +1,6 @@
 <?php
 
-    include "connection.php";
+    include "../connection.php";
 
     $query = mysqli_query($connection, "SELECT * FROM anggota;")
 ?>
@@ -24,13 +24,13 @@
           <div class="collapse navbar-collapse" id="navbarNav">
           <ul class="navbar-nav ms-auto">
             <li class="nav-item">
-              <a class="nav-link" aria-current="page" href="anggota.php">Anggota</a>
+              <a class="nav-link" aria-current="page" href='anggota/anggota.php'>Anggota</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="buku.php">Buku</a>
+              <a class="nav-link" href="buku/buku.php">Buku</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="transaksi.php">Transaksi</a>
+              <a class="nav-link" href="transaksi/transaksi.php">Transaksi</a>
             </li>
           </ul>
           </div>
@@ -49,7 +49,7 @@
                 <button type="button" class="btn btn-secondary ">Sign Up</button>
             </div>                  
             <div class="col-md-6 mt-5 text-end py-3" >
-               <img src="img.png" class="img-fluid" alt="img5">
+               <img src="img/img.png" class="img-fluid" alt="img5">
             </div> 
           </div>
 

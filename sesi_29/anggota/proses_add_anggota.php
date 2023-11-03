@@ -1,5 +1,5 @@
 <?php 
-include 'connection.php';
+include "../connection.php";
 $nama = $_POST['nama'];
 $username = $_POST['username'];
 $password = $_POST['password'];

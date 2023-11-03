@@ -57,7 +57,7 @@
                     <td>
                       <select name="id_penerbit">
                         <?php
-                        include "connection.php";
+                        include "../connection.php";
                         $query = mysqli_query($connection, "SELECT * FROM penerbit");
                         while ($data = mysqli_fetch_array($query)) {
                             echo "<option value=$data[id_penerbit]> $data[nama_penerbit] </option>";
@@ -71,7 +71,7 @@
                     <td>
                       <select name="id_pengarang">
                         <?php
-                        include "connection.php";
+                        include "../connection.php";
                         $query = mysqli_query($connection, "SELECT * FROM pengarang");
                         while ($data = mysqli_fetch_array($query)) {
                             echo "<option value=$data[id_pengarang]> $data[nama_pengarang] </option>";
@@ -85,7 +85,7 @@
                     <td>
                       <select name="id_katalog">
                         <?php
-                        include "connection.php";
+                        include "../connection.php";
                         $query = mysqli_query($connection, "SELECT * FROM katalog");
                         while ($data = mysqli_fetch_array($query)) {
                             echo "<option value=$data[id_katalog]> $data[nama] </option>";

@@ -1,6 +1,6 @@
 <?php
 
-    include "connection.php";
+    include "../connection.php";
 
     $query = mysqli_query($connection, "SELECT * FROM anggota;")
 ?>
@@ -17,7 +17,7 @@
      <!--navbar-->
       <nav class="navbar navbar-expand-lg navbar-light" style="background-color: #9cdbd6;">
         <div class="container">
-          <a class="navbar-brand" href="index.php">My Library</a>
+          <a class="navbar-brand" href="../index.php">My Library</a>
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
           </button>
@@ -27,10 +27,10 @@
               <a class="nav-link" aria-current="page" href="anggota.php">Anggota</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="buku.php">Buku</a>
+              <a class="nav-link" href="../buku/buku.php">Buku</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="transaksi.php">Transaksi</a>
+              <a class="nav-link" href="../transaksi/transaksi.php">Transaksi</a>
             </li>
           </ul>
           </div>
@@ -53,19 +53,19 @@
                     <td><b>Email</b></td>
                     <td><b>Aksi</b></td>
                 </tr>
-                <?php while ($data = mysqli_fetch_array($query)) { ?>
+                <?php while ($anggota = mysqli_fetch_array($query)) { ?>
                  <tr>
                     
-                    <td> <?php echo $data ['nama']; ?> </td>
-                    <td> <?php echo $data ['username']; ?> </td>
-                    <td> <?php echo $data ['password']; ?> </td>
-                    <td> <?php echo $data ['sex']; ?> </td>
-                    <td> <?php echo $data ['telp']; ?> </td>
-                    <td> <?php echo $data ['alamat']; ?> </td>
-                    <td> <?php echo $data ['email']; ?> </td>
+                    <td> <?php echo $anggota ['nama']; ?> </td>
+                    <td> <?php echo $anggota ['username']; ?> </td>
+                    <td> <?php echo $anggota ['password']; ?> </td>
+                    <td> <?php echo $anggota ['sex']; ?> </td>
+                    <td> <?php echo $anggota ['telp']; ?> </td>
+                    <td> <?php echo $anggota ['alamat']; ?> </td> 
+                    <td> <?php echo $anggota ['email']; ?> </td>
                     <td>
-                      <a class='btn btn-success' href="edit_anggota.php?id_anggota=<?php echo $data ['id_anggota']; ?>">Edit</a>
-                      <a class='btn btn-danger' onclick="return confirm ('hapus data ini?');" href="delete_anggota.php?id_anggota=<?php echo $data ['id_anggota']; ?>">Hapus</a>
+                      <a class='btn btn-success' href="edit_anggota.php?id_anggota=<?php echo $anggota ['id_anggota']; ?>">Edit</a>
+                      <a class='btn btn-danger' onclick="return confirm ('hapus data ini?');" href="hapus_anggota.php?id_anggota=<?php echo $anggota ['id_anggota']; ?>">Hapus</a>
                     </td>
                  </tr>
                  <?php } ?>

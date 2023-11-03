@@ -9,7 +9,7 @@
 
 <body>
      <!--navbar-->
-      <nav class="navbar navbar-expand-lg navbar-light" style="background-color:#9cdbd6;">
+      <nav class="navbar navbar-expand-lg navbar-light" style="background-color: #9cdbd6;">
         <div class="container">
           <a class="navbar-brand" href="index.php">My Library</a>
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -36,38 +36,28 @@
    <section id="about" style="background-color: #fff">
         <div class="container" style="height: auto;">
         <div class="col-6">
-         <h4>Tambah Anggota</h4>
-         <form action="proses_add_anggota.php" method="POST" name="form-input-data">
+         <h4>Tambah Transaksi</h4>
+         <form action="proses_add_transaksi.php" method="POST" name="form-input-data">
             <table class="table">
                   <tr>
                     <td>Nama</td>
-                    <td><input type="text" name="nama" class="form-control" required="" autocomplete="off"></td>
-                </tr>
-                  <tr>
-                    <td>Username</td>
-                    <td><input type="text" name="username" class="form-control" required="" autocomplete="off"></td>
-                </tr>
-                  <tr>
-                    <td>Password</td>
-                    <td><input type="password" name="password" class="form-control" required="" autocomplete="off"></td>
-                </tr>
-                <tr>
-                  <td>Jenis Kelamin</td>
-                  <td><input type="radio" name="sex" value="Laki-Laki"> Laki Laki
-                      <input type="radio" name="sex" value="Perempuan"> Perempuan
-                  </td>
+                    <td><select name="id_anggota">
+                        <?php
+                        include "../connection.php";
+                        $query = mysqli_query($connection, "SELECT * FROM anggota");
+                        while ($data = mysqli_fetch_array($query)) {
+                            echo "<option value=$data[id_anggota]> $data[nama] </option>";
+                        }
+                        ?>
+                      </select> </td>
                 </tr>
                 <tr>
-                    <td>Telpon</td>
-                    <td><input type="number" name="telp" class="form-control" required="" autocomplete="off"></td>
+                  <td>Tanggal Pinjam</td>
+                  <td><input type="date" name="tgl_pinjam"  class="form-control" required="" autocomplete="off"></td>
                 </tr>
-                  <tr>
-                    <td>Alamat</td>
-                    <td><input type="text" name="alamat" class="form-control" required="" autocomplete="off"></td>
-                </tr>
-                  <tr>
-                    <td>Email</td>
-                    <td><input type="text" name="email" class="form-control" required="" autocomplete="off"></td>
+                <tr>
+                    <td>Tanggal Kembali</td>
+                    <td><input type="date" name="tgl_kembali"  class="form-control" required="" autocomplete="off"></td>
                 </tr>
                   
                   <tr>

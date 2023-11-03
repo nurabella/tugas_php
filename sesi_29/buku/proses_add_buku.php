@@ -1,5 +1,5 @@
 <?php 
-include 'connection.php';
+include "../connection.php";
 
 $isbn = $_POST['isbn'];
 $judul = $_POST['judul'];
