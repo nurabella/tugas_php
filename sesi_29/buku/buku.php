@@ -2,7 +2,7 @@
 
     include "../connection.php";
 
-    $query = mysqli_query($connection, "SELECT * FROM Buku JOIN penerbit ON penerbit.id_penerbit=buku.id_penerbit JOIN katalog ON katalog.id_katalog=buku.id_katalog JOIN pengarang ON pengarang.id_pengarang = buku.id_pengarang;")
+    $query = mysqli_query($connection, "SELECT * FROM buku JOIN penerbit ON penerbit.id_penerbit=buku.id_penerbit JOIN katalog ON katalog.id_katalog=buku.id_katalog JOIN pengarang ON pengarang.id_pengarang = buku.id_pengarang;")
 ?>
 
 <!doctype html>
@@ -54,25 +54,25 @@
                     <td><b>Katalog</b></td>
                     <td><b>Stok</b></td>
                     <td><b>Harga Pinjam</b></td>
-                     <td><b>Aksi</b></td>
+                    <td><b>Aksi</b></td>
 
                 </tr>
                 <?php 
                 $no = 1;
-                while ($data = mysqli_fetch_array($query)) { ?>
+                while ($book = mysqli_fetch_array($query)) { ?>
                  <tr>
                     <td> <?php echo $no; ?> </td>
-                    <td> <?php echo $data ['isbn']; ?> </td>
-                    <td> <?php echo $data ['judul']; ?> </td>
-                    <td> <?php echo $data ['tahun']; ?> </td>
-                    <td> <?php echo $data ['nama_penerbit']; ?> </td>
-                    <td> <?php echo $data ['nama_pengarang']; ?> </td>
-                    <td> <?php echo $data ['nama']; ?> </td>
-                    <td> <?php echo $data ['qty_stok']; ?> </td>
-                    <td> <?php echo $data ['harga_pinjam']; ?> </td>
+                    <td> <?php echo $book ['isbn']; ?> </td>
+                    <td> <?php echo $book ['judul']; ?> </td>
+                    <td> <?php echo $book ['tahun']; ?> </td>
+                    <td> <?php echo $book ['nama_penerbit']; ?> </td>
+                    <td> <?php echo $book ['nama_pengarang']; ?> </td>
+                    <td> <?php echo $book ['nama']; ?> </td>
+                    <td> <?php echo $book ['qty_stok']; ?> </td>
+                    <td> <?php echo $book ['harga_pinjam']; ?> </td>
                     <td>
-                      <a class='btn btn-success' href='edit_buku.php?id_anggota=$data[id_anggota]'>Edit</a>
-                      <a class='btn btn-danger' href='hapus_buku.php?id_anggota=$data[id_anggota]'>Hapus</a>
+                    <a class='btn btn-success' href="edit_buku.php?id_anggota=<?php echo $book ['isbn']; ?>">Edit</a>
+                    <a class='btn btn-danger' onclick="return confirm ('hapus data ini?');" href="hapus_buku.php?isbn=<?php echo $book ['isbn']; ?>">Hapus</a>
                     </td>
                  </tr>
                 <?php $no++; } ?>

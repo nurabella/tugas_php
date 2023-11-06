@@ -7,6 +7,24 @@
     <title>My Library</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
 
+    <?php
+      include "../connection.php";
+      $isbn= $_GET['isbn'];
+
+      $books= mysqli_query($connection, "SELECT * FROM buku WHERE isbn='$isbn' ");
+
+      foreach ($books as $book){
+        $isbn = $book['isbn'];
+        $judul = $book['judul'];
+        $tahun = $book['tahun'];
+        $id_penerbit = $book['id_penerbit'];
+        $id_pengarang = $book['id_pengarang'];
+        $id_katalog = $book['id_katalog'];
+        $qty_stok= $book['qty_stok'];
+        $harga_pinjam= $book['harga_pinjam'];
+
+        }
+    ?>
 <body>
      <!--navbar-->
       <nav class="navbar navbar-expand-lg navbar-light" style="background-color: #9cdbd6;">
@@ -37,20 +55,19 @@
         <div class="container" style="height: auto;">
          <h4>Tambah Buku</h4>
          <div class="col-6">
-         <form action="proses_add_buku.php" method="post" name="form-input-data">
+         <form action="proses_edit_buku.php?isbn=<?php echo $isbn; ?>" method="POST" name="form-input-data">
              <table class="table">
-
                   <tr>
                     <td>ISBN</td>
-                    <td><input type="text" name="isbn"  class="form-control" required="" autocomplete="off"></td>
+                    <td><input type="text" name="isbn" class="form-control" required="" autocomplete="off" value="<?php echo $isbn;?>"></td>
                 </tr> 
                   <tr>
                     <td>Judul Buku</td>
-                    <td><input type="text" name="judul"  class="form-control" required="" autocomplete="off"></td>
+                    <td><input type="text" name="judul" class="form-control" required="" autocomplete="off" value="<?php echo $judul;?>"> </td>
                 </tr>
                   <tr>
                     <td>Tahun Terbit</td>
-                    <td><input type="date" name="tahun"  class="form-control" required="" autocomplete="off"></td>
+                    <td><input type="date" name="isbn" class="form-control" required="" autocomplete="off" value="<?php echo $tahun;?>"></td>
                 </tr>
                 <tr>
                     <td>Penerbit</td>
@@ -96,7 +113,7 @@
                 </tr>
                   <tr>
                     <td>Stok</td>
-                    <td><input type="text" name="qty_stok"  class="form-control" required="" autocomplete="off"></td>
+                    <td><td><input type="text" name="qty_stok" class="form-control" required="" autocomplete="off" value="<?php echo $qty_stok;?>"></td></td>
                 </tr>
                   <tr>
                     <td>Harga Pinjam</td>
