@@ -11,7 +11,7 @@
      <!--navbar-->
       <nav class="navbar navbar-expand-lg navbar-light" style="background-color: #9cdbd6;">
         <div class="container">
-          <a class="navbar-brand" href="index.php">My Library</a>
+          <a class="navbar-brand" href="../index.php">My Library</a>
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
           </button>
@@ -35,8 +35,8 @@
 
    <section id="about" style="background-color: #fff">
         <div class="container" style="height: auto;">
-         <h4>Tambah Buku</h4>
-         <div class="col-6">
+        <div class="col-6">
+        <h4 class = 'mt-3'  style="text-align: center;">TAMBAH BUKU</h4>
          <form action="proses_add_buku.php" method="post" name="form-input-data">
              <table class="table">
 
@@ -96,16 +96,16 @@
                 </tr>
                   <tr>
                     <td>Stok</td>
-                    <td><input type="text" name="qty_stok"  class="form-control" required="" autocomplete="off"></td>
+                    <td><input type="number" name="qty_stok"  class="form-control" required="" autocomplete="off"></td>
                 </tr>
                   <tr>
                     <td>Harga Pinjam</td>
-                    <td><input type="text" name="harga_pinjam"  class="form-control" required="" autocomplete="off"></td>
+                    <td><input type="number" name="harga_pinjam"  class="form-control" required="" autocomplete="off"></td>
                 </tr>
 
                   <tr>
                     <td></td>
-                    <td><input type="submit" name="submit" value="Tambah"></td>
+                    <td><input class="btn btn-primary" type="submit" name="submit" value="Tambah"></td>
                 </tr>
                    
             </table>

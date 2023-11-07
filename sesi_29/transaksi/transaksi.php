@@ -2,7 +2,7 @@
 
     include "../connection.php";
 
-    $query = mysqli_query($connection, "SELECT * FROM peminjaman JOIN anggota ON peminjaman.id_pinjam=anggota.id_anggota");
+    $query = mysqli_query($connection, "SELECT * FROM peminjaman JOIN anggota ON anggota.id_anggota = peminjaman.id_anggota;")
 ?>
 
 <!doctype html>
@@ -17,7 +17,7 @@
      <!--navbar-->
       <nav class="navbar navbar-expand-lg navbar-light" style="background-color: #9cdbd6;">
         <div class="container">
-          <a class="navbar-brand" href="index.php">My Library</a>
+          <a class="navbar-brand" href="../index.php">My Library</a>
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
           </button>
@@ -41,11 +41,12 @@
 
    <section id="about" style="background-color: #fff">
         <div class="container" style="height: auto;">
-         <h4>Daftar Transaksi</h4>
+          <h4 class = 'mt-3' style="text-align: center;">DAFTAR TRANSAKSI</h4>
           <a class='btn btn-primary mb-3' href='tambah_transaksi.php'>Tambah Transaksi</a>
             <table class="table table-bordered">
                 <tr>
-                    <td><b>No</b></td>
+                    
+                    <td><b>Id pinjam</b></td>
                     <td><b>Nama Anggota</b></td>
                     <!-- <td><b>Jenis Kelamin</b></td>
                     <td><b>Email</b></td> -->
@@ -56,10 +57,11 @@
                      <td><b>Aksi</b></td>
                 </tr>
                 <?php 
-                $no = 1;
+          
                 while ($data = mysqli_fetch_array($query)) { ?>
                  <tr>
-                    <td> <?php echo $no; ?> </td>
+                    
+                    <td> <?php echo $data ['id_pinjam']; ?> </td>
                     <td> <?php echo $data ['nama']; ?> </td>
                     <!-- <td> <?php echo $data ['sex']; ?> </td>
                     <td> <?php echo $data ['email']; ?> </td> -->
@@ -68,11 +70,11 @@
                     <!-- <td> <?php echo $data ['judul']; ?> </td>
                     <td> <?php echo $data ['harga_pinjam']; ?> </td> -->
                     <td>
-                      <a class='btn btn-success' href='edit_anggota.php?id_anggota=$data[id_anggota]'>Edit</a>
-                      <a class='btn btn-danger' href='hapus_anggota.php?id_anggota=$data[id_anggota]'>Hapus</a>
+                      <a class='btn btn-success' href="edit_transaksi.php?id_pinjam=<?php echo $data ['id_pinjam']; ?>">Edit</a>
+                      <a class='btn btn-danger' onclick="return confirm ('hapus data ini?');" href="hapus_transaksi.php?id_pinjam=<?php echo $data ['id_pinjam']; ?>">Hapus</a>
                     </td>
                  </tr>
-                 <?php $no++; } ?>
+                 <?php } ?>
             </table>
         </div>
       </section>

@@ -39,11 +39,11 @@
     <!--akhir navbar-->
 
         <div class="container" style="height: auto;">
-         <h4>Data Anggota Perpustakaan</h4>
+         <h4 class = 'mt-3' style="text-align: center;">DATA ANGGOTA PERPUSTAKAAN</h4>
           <a class='btn btn-primary mb-3' href='tambah_anggota.php'>Tambah Anggota</a>
             <table class="table table-bordered ">
                 <tr>
-                    
+                    <td><b>No</b></td>
                     <td><b>Nama</b></td>
                     <td><b>Username</b></td>
                     <td><b>Password</b></td>
@@ -53,9 +53,11 @@
                     <td><b>Email</b></td>
                     <td><b>Aksi</b></td>
                 </tr>
-                <?php while ($anggota = mysqli_fetch_array($query)) { ?>
+                <?php 
+                $no = 1;
+                while ($anggota = mysqli_fetch_array($query)) { ?>
                  <tr>
-                    
+                    <td> <?php echo $no; ?> </td>
                     <td> <?php echo $anggota ['nama']; ?> </td>
                     <td> <?php echo $anggota ['username']; ?> </td>
                     <td> <?php echo $anggota ['password']; ?> </td>
@@ -68,7 +70,7 @@
                       <a class='btn btn-danger' onclick="return confirm ('hapus data ini?');" href="hapus_anggota.php?id_anggota=<?php echo $anggota ['id_anggota']; ?>">Hapus</a>
                     </td>
                  </tr>
-                 <?php } ?>
+                <?php $no++; } ?>
             </table>
         </div>
      

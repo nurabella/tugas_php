@@ -41,7 +41,7 @@
 
    <section id="about" style="background-color: #fff">
         <div class="container" style="height: auto;">
-         <h4>Daftar Buku</h4>
+            <h4 class = 'mt-3'  style="text-align: center;">DAFTAR BUKU</h4>
            <a class='btn btn-primary mb-3' href='tambah_buku.php'>Tambah Buku</a>
             <table class="table table-bordered">
                 <tr>
@@ -71,7 +71,7 @@
                     <td> <?php echo $book ['qty_stok']; ?> </td>
                     <td> <?php echo $book ['harga_pinjam']; ?> </td>
                     <td>
-                    <a class='btn btn-success' href="edit_buku.php?id_anggota=<?php echo $book ['isbn']; ?>">Edit</a>
+                    <a class='btn btn-success' href="edit_buku.php?isbn=<?php echo $book ['isbn']; ?>">Edit</a>
                     <a class='btn btn-danger' onclick="return confirm ('hapus data ini?');" href="hapus_buku.php?isbn=<?php echo $book ['isbn']; ?>">Hapus</a>
                     </td>
                  </tr>

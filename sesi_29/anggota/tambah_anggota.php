@@ -21,10 +21,10 @@
               <a class="nav-link" aria-current="page" href="anggota.php">Anggota</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="buku/buku.php">Buku</a>
+              <a class="nav-link" href="../buku/buku.php">Buku</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="transaksi/transaksi.php">Transaksi</a>
+              <a class="nav-link" href="../transaksi/transaksi.php">Transaksi</a>
             </li>
           </ul>
           </div>
@@ -36,7 +36,7 @@
    <section id="about" style="background-color: #fff">
         <div class="container" style="height: auto;">
         <div class="col-6">
-         <h4>Tambah Anggota</h4>
+           <h4 class = 'mt-3' style="text-align: center;">TAMBAH ANGGOTA PERPUSTAKAAN</h4>
          <form action="proses_add_anggota.php" method="POST" name="form-input-data">
             <table class="table">
                   <tr>
@@ -77,11 +77,9 @@
                     <td>Email</td>
                     <td><input type="text" name="email" class="form-control" required="" autocomplete="off"></td>
                 </tr>
-                  
-                  <tr>
                     <td></td>
-                    <td><input type="submit" name="submit" value="Tambah"></td>
-                </tr>
+                    <td><input class="btn btn-primary" type="submit" name="submit" value="Tambah"></td>
+            
             </table>
             
           </form>

@@ -23,13 +23,37 @@
 
         }
     ?>
+<!--navbar-->
+      <nav class="navbar navbar-expand-lg navbar-light" style="background-color:#9cdbd6;">
+        <div class="container">
+          <a class="navbar-brand" href="../index.php">My Library</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item">
+              <a class="nav-link" aria-current="page" href="anggota.php">Anggota</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="../buku/buku.php">Buku</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="../transaksi/transaksi.php">Transaksi</a>
+            </li>
+          </ul>
+          </div>
+        </div>
+      </nav>
+
+    <!--akhir navbar-->
         
 <body>
 
 	 <section id="about" style="background-color: #fff">
         <div class="container" style="height: auto;">
-         <h4>Edit Anggota</h4>
         <div class="col-6">
+          <h4 class = 'mt-3' style="text-align: center;">EDIT DATA ANGGOTA</h4>
          <form action="proses_edit_anggota.php?id_anggota=<?php echo $id_anggota; ?>" method="POST" name="form-input-data">
               <table class="table">
                   <tr>
@@ -90,7 +114,7 @@
                   
                   <tr>
                     <td></td>
-                    <td><input type="submit" name="submit"  value="Tambah"></td>
+                    <td><input class="btn btn-primary" type="submit" name="submit" value="Tambah"></td>
                 </tr>
             </table>
           </form>
