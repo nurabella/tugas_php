@@ -5,7 +5,10 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>My Library</title>
+
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+
+    <script src="https://code.jquery.com/jquery-3.6.3.min.js" integrity="sha256-pvPw+upLPUjgMXY0G+8O0xUf+/Im1MZjXxxgOcBQBXU=" crossorigin="anonymous"></script>
 
 <body>
      <!--navbar-->
@@ -41,7 +44,7 @@
             <table class="table">
                   <tr>
                     <td>Nama</td>
-                    <td><input type="text" name="nama" class="form-control" required="" autocomplete="off"></td>
+                    <td><input type="text" name="nama" id="name" class="form-control" required="" autocomplete="off"></td>
                 </tr>
                   <tr>
                     <td>Username</td>
@@ -49,13 +52,13 @@
                 </tr>
                   <tr>
                     <td>Password</td>
-                    <td><input type="password" name="password" class="form-control" required="" autocomplete="off"></td>
+                    <td><input type="password" name="password"  class="form-control" required="" autocomplete="off"></td>
                 </tr>
                 <tr>
                   <td>Jenis Kelamin</td>
                   <td>
                     <div class="form-check">
-                      <input class="form-check-input" type="radio" name="sex"  value="Laki-laki" >
+                      <input class="form-check-input" type="radio" name="sex"  value="Laki-laki" checked="" >
                       <label class="form-check-label"> Laki-laki</label>
                       </div>
 
@@ -78,7 +81,7 @@
                     <td><input type="text" name="email" class="form-control" required="" autocomplete="off"></td>
                 </tr>
                     <td></td>
-                    <td><input class="btn btn-primary" type="submit" name="submit" value="Tambah"></td>
+                    <td><input class="btn btn-primary" type="submit" name="submit" value="Tambah" id="tambah" disabled="  "></td>
             
             </table>
             
@@ -87,6 +90,19 @@
         </div>
       </section>
     <!--akhir about-->
+
+    <!--jquery-->
+
+    <script type="text/javascript">
+      $(document).ready(function(){
+
+        $("#name"). on("keyup", function  (){
+          $("#tambah").prop('disabled', false );
+        });
+      });
+    </script>
+
+   <!--akhir jquery-->
     
 </body>
 </html>

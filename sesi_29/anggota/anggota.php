@@ -11,7 +11,15 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>My Library</title>
+
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+
+    <script src="https://code.jquery.com/jquery-3.6.3.min.js" integrity="sha256-pvPw+upLPUjgMXY0G+8O0xUf+/Im1MZjXxxgOcBQBXU=" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.13.7/css/jquery.dataTables.css" />
+      
+    <script src="https://cdn.datatables.net/1.13.7/js/jquery.dataTables.js"></script>
+
+
 
 <body>
      <!--navbar-->
@@ -41,10 +49,11 @@
         <div class="container" style="height: auto;">
          <h4 class = 'mt-3' style="text-align: center;">DATA ANGGOTA PERPUSTAKAAN</h4>
           <a class='btn btn-primary mb-3' href='tambah_anggota.php'>Tambah Anggota</a>
-            <table class="table table-bordered ">
-                <tr>
+            <table id="data" class="display">
+               <thead>
+                <tr >
                     <td><b>No</b></td>
-                    <td><b>Nama</b></td>
+                    <td ><b>Nama</b></td>
                     <td><b>Username</b></td>
                     <td><b>Password</b></td>
                     <td><b>Jenis Kelamin</b></td>
@@ -53,9 +62,13 @@
                     <td><b>Email</b></td>
                     <td><b>Aksi</b></td>
                 </tr>
+              </thead>
+
                 <?php 
                 $no = 1;
+
                 while ($anggota = mysqli_fetch_array($query)) { ?>
+                 <tbody>
                  <tr>
                     <td> <?php echo $no; ?> </td>
                     <td> <?php echo $anggota ['nama']; ?> </td>
@@ -70,6 +83,7 @@
                       <a class='btn btn-danger' onclick="return confirm ('hapus data ini?');" href="hapus_anggota.php?id_anggota=<?php echo $anggota ['id_anggota']; ?>">Hapus</a>
                     </td>
                  </tr>
+               </tbody>
                 <?php $no++; } ?>
             </table>
         </div>
@@ -83,5 +97,13 @@
     </footer>
 
     <!--akhir footer -->
+
+    <script type="text/javascript">
+            
+      $(document).ready(function () {
+          $('#data').DataTable();
+      } );
+
+    </script>
 </body>
 </html>

@@ -42,7 +42,7 @@
 
                   <tr>
                     <td>ISBN</td>
-                    <td><input type="text" name="isbn"  class="form-control" required="" autocomplete="off"></td>
+                    <td><input type="text" name="isbn" id="name" class="form-control" required="" autocomplete="off"></td>
                 </tr> 
                   <tr>
                     <td>Judul Buku</td>
@@ -105,7 +105,7 @@
 
                   <tr>
                     <td></td>
-                    <td><input class="btn btn-primary" type="submit" name="submit" value="Tambah"></td>
+                   <td><input class="btn btn-primary" type="submit" name="submit" value="Tambah" id="tambah" disabled="  "></td>
                 </tr>
                    
             </table>
@@ -114,6 +114,18 @@
         </div>
       </section>
     <!--akhir about-->
+    <!--jquery-->
+
+    <script type="text/javascript">
+      $(document).ready(function(){
+
+        $("#name"). on("keyup", function  (){
+          $("#tambah").prop('disabled', false );
+        });
+      });
+    </script>
+
+   <!--akhir jquery-->
     
 </body>
 </html>

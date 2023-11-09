@@ -59,7 +59,7 @@
                   <tr>
                     <td>Nama</td>
                     <td>
-                      <input type="text" name="nama" class="form-control" required="" autocomplete="off" value="<?php echo $nama;?>">
+                      <input type="text" name="nama" id="name" class="form-control" required="" autocomplete="off" value="<?php echo $nama;?>">
                     </td>
                 </tr>
                   <tr>
@@ -114,13 +114,26 @@
                   
                   <tr>
                     <td></td>
-                    <td><input class="btn btn-primary" type="submit" name="submit" value="Tambah"></td>
+                    <td><input class="btn btn-primary" type="submit" name="submit" value="edit" id="edit" disabled="  "></td>
                 </tr>
             </table>
           </form>
         </div>
       </section>
     <!--akhir about-->
+
+    <!--jquery-->
+
+    <script type="text/javascript">
+      $(document).ready(function(){
+
+        $("#name"). on("keyup", function  (){
+          $("#edit").prop('disabled', false );
+        });
+      });
+    </script>
+
+   <!--akhir jquery-->
 
 </body>
 
