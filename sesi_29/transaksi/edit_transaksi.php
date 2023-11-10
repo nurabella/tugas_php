@@ -76,8 +76,7 @@
                 </tr>
                   
                   <tr>
-                    <td></td>
-                    <td><input class="btn btn-primary" type="submit" name="submit" value="Tambah"></td>
+                    <td><input class="btn btn-primary" type="submit" name="submit" value="edit" onclick="showEditdata('Edit data ini?')"  ></td>
                 </tr>
             </table>
             
@@ -86,6 +85,15 @@
         </div>
       </section>
     <!--akhir about-->
+
+    
+     <script type="text/javascript">
+      function showEditdata(edit){
+        alert(edit);
+      }
+
+    </script>
+
 
 </body>
 

@@ -59,7 +59,7 @@
                   <tr>
                     <td>Nama</td>
                     <td>
-                      <input type="text" name="nama" id="name" class="form-control" required="" autocomplete="off" value="<?php echo $nama;?>">
+                      <input type="text" name="nama" class="form-control" required="" autocomplete="off" value="<?php echo $nama;?>">
                     </td>
                 </tr>
                   <tr>
@@ -114,7 +114,7 @@
                   
                   <tr>
                     <td></td>
-                    <td><input class="btn btn-primary" type="submit" name="submit" value="edit" id="edit" disabled="  "></td>
+                    <td><input class="btn btn-primary" type="submit" name="submit" value="edit" onclick="showEditdata('Anda yakin mengedit data ini?')"  ></td>
                 </tr>
             </table>
           </form>
@@ -124,13 +124,11 @@
 
     <!--jquery-->
 
-    <script type="text/javascript">
-      $(document).ready(function(){
+     <script type="text/javascript">
+      function showEditdata(edit){
+        alert(edit);
+      }
 
-        $("#name"). on("keyup", function  (){
-          $("#edit").prop('disabled', false );
-        });
-      });
     </script>
 
    <!--akhir jquery-->

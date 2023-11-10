@@ -77,7 +77,7 @@
                     <!-- <td> <?php echo $data ['judul']; ?> </td>
                     <td> <?php echo $data ['harga_pinjam']; ?> </td> -->
                     <td>
-                      <a class='btn btn-success' href="edit_transaksi.php?id_pinjam=<?php echo $data ['id_pinjam']; ?>">Edit</a>
+                      <a class='btn btn-success'onclick="showEditdata('Edit data ini?')" href="edit_transaksi.php?id_pinjam=<?php echo $data ['id_pinjam']; ?>">Edit</a>
                       <a class='btn btn-danger' onclick="return confirm ('hapus data ini?');" href="hapus_transaksi.php?id_pinjam=<?php echo $data ['id_pinjam']; ?>">Hapus</a>
                     </td>
                  </tr>
@@ -100,6 +100,11 @@
       $(document).ready(function () {
           $('#data').DataTable();
       } );
+
+
+       function showEditdata(edit){
+        alert(edit);
+      }
 
     </script>
 </body>

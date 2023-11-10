@@ -78,8 +78,8 @@
                     <td> <?php echo $book ['qty_stok']; ?> </td>
                     <td> <?php echo $book ['harga_pinjam']; ?> </td>
                     <td>
-                    <a class='btn btn-success' href="edit_buku.php?isbn=<?php echo $book ['isbn']; ?>">Edit</a>
-                    <a class='btn btn-danger' onclick="return confirm ('hapus data ini?');" href="hapus_buku.php?isbn=<?php echo $book ['isbn']; ?>">Hapus</a>
+                    <a class='btn btn-success' onclick="showEditdata('Edit data ini?')"  href="edit_buku.php?isbn=<?php echo $book ['isbn']; ?>">Edit</a>
+                    <a class='btn btn-danger' onclick="return confirm ('hapus data ini?');"  href="hapus_buku.php?isbn=<?php echo $book ['isbn']; ?>">Hapus</a>
                     </td>
                  </tr>
                 </tbody>
@@ -96,13 +96,18 @@
 
     <!--akhir footer -->
 
-     <script type="text/javascript">
+    <script type="text/javascript">
             
       $(document).ready(function () {
           $('#data').DataTable();
       } );
 
+      
+       function showEditdata(edit){
+        alert(edit);
+      }
+
     </script>
-    
+
 </body>
 </html>

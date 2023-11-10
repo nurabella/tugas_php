@@ -59,7 +59,7 @@
              <table class="table">
                   <tr>
                     <td>ISBN</td>
-                    <td><input type="text" name="isbn" class="form-control" required="" autocomplete="off" value="<?php echo $isbn;?>"></td>
+                    <td><input type="text" name="isbn" id="name" class="form-control" required="" autocomplete="off" value="<?php echo $isbn;?>"></td>
                 </tr> 
                   <tr>
                     <td>Judul Buku</td>
@@ -72,7 +72,7 @@
                 <tr>
                     <td>Penerbit</td>
                     <td>
-                      <select name="id_penerbit">
+                      <select name="id_penerbit" selected=" ">
                         <?php
                         include "../connection.php";
                         $query = mysqli_query($connection, "SELECT * FROM penerbit");
@@ -122,7 +122,7 @@
 
                   <tr>
                     <td></td>
-                    <td><input class="btn btn-primary" type="submit" name="submit" value="Tambah"></td>
+                    <td><input class="btn btn-primary" type="submit" name="submit" value="edit" onclick="showEditdata('Edit data ini?')"  ></td>
                 </tr>
                    
             </table>
@@ -132,5 +132,15 @@
       </section>
     <!--akhir about-->
     
+ <!--jquery-->
+
+     <script type="text/javascript">
+      function showEditdata(edit){
+        alert(edit);
+      }
+
+    </script>
+
+
 </body>
 </html>

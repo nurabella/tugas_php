@@ -1,10 +1,3 @@
-<?php
-
-    include "../connection.php";
-
-    $query = mysqli_query($connection, "SELECT * FROM anggota;")
-?>
-
 <!doctype html>
 <html lang="en">
   <head>
@@ -67,7 +60,12 @@
                 <?php 
                 $no = 1;
 
-                while ($anggota = mysqli_fetch_array($query)) { ?>
+                include "../connection.php";
+
+                $anggotas = mysqli_query($connection, "SELECT * FROM anggota");
+
+                foreach  ($anggotas as $key => $anggota) { ?>
+
                  <tbody>
                  <tr>
                     <td> <?php echo $no; ?> </td>
@@ -79,8 +77,9 @@
                     <td> <?php echo $anggota ['alamat']; ?> </td> 
                     <td> <?php echo $anggota ['email']; ?> </td>
                     <td>
-                      <a class='btn btn-success' href="edit_anggota.php?id_anggota=<?php echo $anggota ['id_anggota']; ?>">Edit</a>
-                      <a class='btn btn-danger' onclick="return confirm ('hapus data ini?');" href="hapus_anggota.php?id_anggota=<?php echo $anggota ['id_anggota']; ?>">Hapus</a>
+                      <a class='btn btn-success' onclick="showEditdata('Edit data ini?')" href="edit_anggota.php?id_anggota=<?php echo $anggota ['id_anggota']; ?>">Edit</a>
+                      <a class='btn btn-danger' onclick="return confirm ('hapus data ini?');"
+                      href="hapus_anggota.php?id_anggota=<?php echo $anggota ['id_anggota']; ?>">Hapus</a>
                     </td>
                  </tr>
                </tbody>
@@ -103,6 +102,11 @@
       $(document).ready(function () {
           $('#data').DataTable();
       } );
+
+       function showEditdata(edit){
+        alert(edit);
+      }
+
 
     </script>
 </body>

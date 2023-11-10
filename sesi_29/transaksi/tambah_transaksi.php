@@ -54,7 +54,7 @@
                 </tr>
                 <tr>
                   <td>Tanggal Pinjam</td>
-                  <td><input type="date" name="tgl_pinjam" id="name" class="form-control" required="" autocomplete="off"></td>
+                  <td><input type="date" name="tgl_pinjam"  id="date" class="form-control" required="" autocomplete="off"></td>
                 </tr>
                 <tr>
                     <td>Tanggal Kembali</td>
@@ -78,7 +78,7 @@
     <script type="text/javascript">
       $(document).ready(function(){
 
-        $("#name"). on("keyup", function  (){
+        $("#date"). on("keyup", function  (){
           $("#tambah").prop('disabled', false );
         });
       });
